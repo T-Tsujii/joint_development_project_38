@@ -4,5 +4,6 @@
   <p>
     <%= user.name %>
     <%= link_to '詳細', "/users/#{user.id}", method: :get %>
+    <%= link_to '編集', "/users/#{user.id}/edit", method: :get %>
   </p>
 <% end %>
