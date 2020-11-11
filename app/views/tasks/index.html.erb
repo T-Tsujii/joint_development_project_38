@@ -3,7 +3,7 @@
 <% @tasks.each do |task| %>
   <p>
     <%= task.content %>
-    <%= link_to "詳細" %>
+    <%= link_to "詳細", task_path(task.id) %>
     <%= link_to "編集" %>
     <%= link_to "削除" %>
   </p>
