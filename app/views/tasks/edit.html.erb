@@ -1,0 +1,6 @@
+<h1>タスク 編集</h1>
+<%= form_with model: @task, local:true do |f| %>
+  <div>タイトル <%= f.text_field :title %></div>
+  <div>内容 <%= f.text_field :content %></div>
+  <%= f.submit "送信" %>
+<% end %>

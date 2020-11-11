@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :find_task, only: [:show, :edit, :update]
+
   def index
     @tasks = Task.all
   end
@@ -12,11 +14,21 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    @task.update(task_params)
   end
 
   private
   def task_params
     params.require(:task).permit(:title, :content)
+  end
+
+  def find_task
+    @task = Task.find(params[:id])
   end
 end
